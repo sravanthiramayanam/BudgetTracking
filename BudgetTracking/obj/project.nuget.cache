@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "oU0LMaKRAOM1vge1qC9mkUBP2iIIfcQ6WwZ4kNJXktSqeT0yuxSa1qVtsVzwmyNsTKYEWYPeLhTdIZyaVq5Fvw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\srava\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\srava\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\srava\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\srava\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\srava\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

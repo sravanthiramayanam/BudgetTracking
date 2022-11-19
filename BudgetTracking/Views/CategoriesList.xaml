@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:BudgetTracking.Models"
+             x:Class="BudgetTracking.Views.CategoriesList">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<ListView x:Name="TodoListView"
+                  Margin="20"
+                  ItemSelected="TodoListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:ToDo">
+                        <TextCell Text="{Binding Text}" Detail="{Binding Date}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <Grid>
+                <Editor x:Name="Name" 
+                    Placeholder="Enter name of item"
+                    HeightRequest="50" />
+               <!-- <CollectionView Grid.Column="1" SelectionMode="Single" />-->
+                <Editor x:Name="amount" Grid.Row="1"
+                    Placeholder="Enter amount u spent"
+                    HeightRequest="50" />
+                <Editor x:Name="date" Grid.Row="2"
+                    Placeholder="Enter the date u purchased" 
+                    HeightRequest="50" />
+                <DatePicker Grid.Row="2" Grid.Column="1" DateSelected="DatePicker_DateSelected"/>
+
+                <Button  Grid.Row="3"  Text="Save"  Clicked="SaveButtonClicked" HeightRequest="45" WidthRequest="45"/>
+                <Button Grid.Row="3" Grid.Column="1" Text="Delete" Clicked="DeleteButtonClicked" HeightRequest="45" WidthRequest="45"/>
+
+                <!--<Editor Grid.Row="1" x:Name="MedicalBudgetText"
+                    Placeholder="Enter your budget"
+                    HeightRequest="100" />
+                <Button Grid.Row="1" Grid.Column="1" Text="Medical" Clicked="MedicalButtonClicked"/>
+                <Editor Grid.Row="2" x:Name="UtilityBudgetText"
+                    Placeholder="Enter your budget"
+                    HeightRequest="100" />
+                <Button Grid.Row="2" Grid.Column="1" Text="Utility" Clicked="UtilityButtonClicked"/>-->
+
+
+
+                <!--<ImageButton  Source="groceries.png" Clicked="ImageButton_Clicked"></ImageButton>-->
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
