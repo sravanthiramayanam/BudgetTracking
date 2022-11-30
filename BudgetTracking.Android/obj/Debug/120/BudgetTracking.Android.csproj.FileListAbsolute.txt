@@ -635,3 +635,9 @@ C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\res\drawable\groceries.png
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\res\drawable\instruments.png
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\res\drawable\budget.png
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\res\drawable\automobile.png
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\res\drawable\medical.png
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\res\drawable\utility.png
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.Android\obj\Debug\120\res\drawable\shopping.png

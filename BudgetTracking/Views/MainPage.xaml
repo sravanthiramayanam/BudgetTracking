@@ -5,16 +5,27 @@
              x:Class="BudgetTracking.Views.MainPage">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Welcome to budget app"  TextColor="ForestGreen" HorizontalOptions="CenterAndExpand" FontSize="Large" FontFamily="Bold" />
+            <Image Source="budget.png" WidthRequest="180" HeightRequest="180"/>
             <Editor  x:Name="MonthlyBudget" Placeholder="Enter monthly goal" PlaceholderColor="Red"/>
-            <Button Text="SaveMonthlyBudget"  Clicked="SaveMonthlyBudgetClicked" HeightRequest="45" WidthRequest="45"/>
-            <Editor x:Name="yourbudget" />
+            <Button  VerticalOptions="Center" x:Name="SaveMonthlyBudget" Text="SaveMonthlyBudget"  Clicked="SaveMonthlyBudgetClicked" BorderWidth="1.5" CornerRadius="50"
+                     BorderColor="ForestGreen"
+                      />
+            <Label  x:Name="BudgetLabel" Text="Your Monthly Budget is:" FontSize="Large" FontFamily="Bold" TextColor="ForestGreen"/>
+            <Editor  x:Name="yourbudget" />
+            <Label Text="Remaining Budget for your month is:" FontSize="Large" FontFamily="Bold" TextColor="Red"/>
+            <Editor x:Name="Leftbudget"/>
             <ListView x:Name="BudgetListView" 
                       Margin="20"
                       ItemSelected="BudgetListView_ItemSelected">
                 <ListView.ItemTemplate>
                     
                     <DataTemplate x:DataType="model:Budget">
-                        <TextCell Text="{Binding Text}"  Detail="{Binding amount}"></TextCell>
+                        <!--<TextCell Text="{Binding Text}"  Detail="{Binding amount} ">
+                           
+                        </TextCell>-->
+                        <ImageCell  Text="{Binding Text}" Detail="{Binding amount}" ImageSource="{Binding ImageUrl}"/>
+
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

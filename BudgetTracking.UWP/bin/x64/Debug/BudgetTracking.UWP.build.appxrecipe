@@ -61,11 +61,20 @@
     <AppxPackagedFile Include="C:\Users\srava\.nuget\packages\xamarin.forms\5.0.0.2196\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\automobile.png">
+      <PackagePath>automobile.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\budget.png">
+      <PackagePath>budget.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\groceries.png">
       <PackagePath>groceries.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\Instruments.png">
       <PackagePath>Instruments.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\medical.png">
+      <PackagePath>medical.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -177,6 +186,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\shopping.png">
       <PackagePath>shopping.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\utility.png">
+      <PackagePath>utility.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\xamarin_logo.png">
       <PackagePath>xamarin_logo.png</PackagePath>

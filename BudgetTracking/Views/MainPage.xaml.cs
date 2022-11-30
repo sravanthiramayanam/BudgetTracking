@@ -15,64 +15,140 @@ namespace BudgetTracking.Views
     public partial class MainPage : ContentPage
     {
         public string FileName { get; private set; }
+        public double totalbudget;
 
         public MainPage()
         {
             InitializeComponent();
+            //double totalexpenses = 0;
+            //double remainingbudget = totalbudget - totalexpenses;
+           
+            var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "budget.txt");
+            
+            if (File.Exists(fileName))
+            {
+               MonthlyBudget.IsVisible = false;
+               SaveMonthlyBudget.IsVisible = false;
+               BudgetLabel.IsVisible = true;
+                totalbudget = double.Parse(File.ReadAllText(fileName));
+                yourbudget.Text = File.ReadAllText(fileName);
 
+
+
+            }
+            else
+            {
+                
+                MonthlyBudget.IsVisible = true;
+                SaveMonthlyBudget.IsVisible = true;
+                BudgetLabel.IsVisible = false;
+                yourbudget.IsVisible = false;
+               
+            }
+
+            
         }
+
 
         protected override void OnAppearing()
         {
             var budgets = new List<Budget>();
             var files = Directory.EnumerateFiles(Environment.GetFolderPath(
                 Environment.SpecialFolder.LocalApplicationData), "*.notes.txt");
+           double totalexpenses = 0;
 
             foreach (var file in files)
             {
-               // String allText = File.ReadAllText(file);
-               // String[] text = allText.Split('\n');
-                var budget= new Budget
+                String allText = File.ReadAllText(file);
+                String[] text = allText.Split('\n');
+
+                var Name= text[0];
+                 var amount =  text[1];
+                var image = "";
+                try
                 {
-                   // Text= text[0],
-                    //amount="$"+text[1],
-                    //Date = text[2],
+                    image = text[4];
+                }
+                catch
+                {
+                    image = "";
+                }
+               
 
-                    Text = File.ReadAllText(file),
-                    //Date = File.GetCreationTime(file),
-                  //amount = File.ReadAllText(file),
+                if (amount == "")
+                {
+                    totalexpenses += 0.0;
+                }
+                else
+                {
+                    totalexpenses += double.Parse(amount);
+                }
+                
+                var budget = new Budget
+                {
 
+                    Text = Name,
+                    //Category= selectedcategory,
+                    //Text = Name,
+                    amount= "$"+amount,
+                    ImageUrl = image,
+                   
 
-                  //Name.Text = text[0];
-                  //amount.Text = text[1];
-                  // date.Text = text[2];
 
                 FileName = file
                 };
+                
               budgets.Add(budget);  
                 
             }
+           double remainingbudget= totalbudget - totalexpenses;
+           Leftbudget.Text= "$"+remainingbudget.ToString();
+           
+            if (totalexpenses>totalbudget)
+            {
+                DisplayAlert("Warning", "OVER THE BUDGET", "ok");
+            }
             BudgetListView.ItemsSource = budgets.OrderByDescending(t => t.Date);
             
-            //TodoListView.ItemsSource = todos.OrderByDescending(t => t.Date);
+            
+            
         }
-        private void BudgetListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        
+
+        private async void BudgetListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushModalAsync(new CategoriesList
+            await Navigation.PushModalAsync(new CategoriesList
             {
                 BindingContext = (Budget)e.SelectedItem
-            }).Wait();
+            });
         }
 
         private async void SaveMonthlyBudgetClicked(object sender, EventArgs e)
         {
-            var budget = (Budget)BindingContext;
-            budget = new Budget();
+          
+            var BudgetForMonth = MonthlyBudget.Text;
             
-                budget.FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                $"{Path.GetRandomFileName()}.budget.txt");
-            
-                File.WriteAllText(budget.FileName, MonthlyBudget.Text);
+                var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                 "budget.txt");
+               
+                try
+                {
+                    StreamWriter sw = new StreamWriter(fileName);
+                    sw.WriteLine(BudgetForMonth);
+                    sw.Close();
+                }
+                catch (System.IO.DirectoryNotFoundException ex)
+                {
+                    System.IO.Directory.CreateDirectory(BudgetForMonth);
+                    StreamWriter sw = new System.IO.StreamWriter(fileName);
+                    sw.WriteLine(BudgetForMonth);
+                    sw.Close();
+                }
+           
+            MonthlyBudget.IsVisible = false;
+            SaveMonthlyBudget.IsVisible = false;
+            yourbudget.Text = BudgetForMonth;
                 if (Navigation.ModalStack.Count > 0)
                 {
                     await Navigation.PopModalAsync();
@@ -80,11 +156,7 @@ namespace BudgetTracking.Views
                 else
                 {
                     Shell.Current.CurrentItem = (Shell.Current as AppShell).MainPageContent;
-                }
-
-
-            
-            
+                }           
 
         }
     }

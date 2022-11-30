@@ -5,44 +5,65 @@
              x:Class="BudgetTracking.Views.CategoriesList">
     <ContentPage.Content>
         <StackLayout>
-            <!--<ListView x:Name="TodoListView"
-                  Margin="20"
-                  ItemSelected="TodoListView_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="model:ToDo">
-                        <TextCell Text="{Binding Text}" Detail="{Binding Date}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-            <Grid>
-                <Editor x:Name="Name" 
-                    Placeholder="Enter name of item"
-                    HeightRequest="50" />
-               <!-- <CollectionView Grid.Column="1" SelectionMode="Single" />-->
-                <Editor x:Name="amount" Grid.Row="1"
-                    Placeholder="Enter amount u spent"
-                    HeightRequest="50" />
-                <Editor x:Name="date" Grid.Row="2"
-                    Placeholder="Enter the date u purchased" 
-                    HeightRequest="50" />
-                <DatePicker Grid.Row="2" Grid.Column="1" DateSelected="DatePicker_DateSelected"/>
+            <Label  x:Name="BudgetLabel" Text="Your Monthly Budget is:" FontSize="Large" FontFamily="Bold" TextColor="ForestGreen"/>
+            <Editor x:Name="yourbudget"/>
+            
 
-                <Button  Grid.Row="3"  Text="Save"  Clicked="SaveButtonClicked" HeightRequest="45" WidthRequest="45"/>
-                <Button Grid.Row="3" Grid.Column="1" Text="Delete" Clicked="DeleteButtonClicked" HeightRequest="45" WidthRequest="45"/>
+            <Label Text="Name of Item" TextColor="ForestGreen" FontSize="Medium"  FontFamily="Bold"/>
+            <Entry  x:Name="Name" 
+                    Placeholder="Enter name of item" PlaceholderColor="Gray" 
+                    VerticalOptions="Center"
+                     WidthRequest="100"/>
+            
 
-                <!--<Editor Grid.Row="1" x:Name="MedicalBudgetText"
-                    Placeholder="Enter your budget"
-                    HeightRequest="100" />
-                <Button Grid.Row="1" Grid.Column="1" Text="Medical" Clicked="MedicalButtonClicked"/>
-                <Editor Grid.Row="2" x:Name="UtilityBudgetText"
-                    Placeholder="Enter your budget"
-                    HeightRequest="100" />
-                <Button Grid.Row="2" Grid.Column="1" Text="Utility" Clicked="UtilityButtonClicked"/>-->
+            <!-- <CollectionView Grid.Column="1" SelectionMode="Single" />-->
+            <Label Text="Select the category here " TextColor="ForestGreen" FontSize="Medium"  FontFamily="Bold"/>
+            <ListView x:Name="CategoryListView" HasUnevenRows="True"
+                          ItemSelected="CategoryListView_ItemSelected" HorizontalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto">
+                                        </RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" HeightRequest="45" WidthRequest="45" Source="{Binding ImageUrl}"></Image>
+                                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" FontAttributes="Bold" ></Label>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Entry x:Name="selectedcategory" 
+                          Placeholder="selected category" PlaceholderColor="Gray"
+                          VerticalOptions="Center"/>
+            
+            <Label Text="Enter amount of Item" TextColor="ForestGreen" FontSize="Medium"  FontFamily="Bold"/>
+                <Entry x:Name="amount" 
+                    Placeholder="Enter amount u spent" PlaceholderColor="Gray"
+                    VerticalOptions="Center"  />
+            <Label Text="Select date and time of purchase" TextColor="ForestGreen" FontSize="Medium"  FontFamily="Bold"/>
+            <DatePicker Grid.Row="2" Grid.Column="1" DateSelected="DatePicker_DateSelected"/>
+            <Entry x:Name="date" 
+                    Placeholder="Selected date" PlaceholderColor="Gray"
+                    VerticalOptions="Center"/>
+
+            <Button  Text="Save"  Clicked="SaveButtonClicked" BorderWidth="1.5" CornerRadius="50"
+                     BorderColor="ForestGreen" />
+            <Button  Text="Delete" Clicked="DeleteButtonClicked" HeightRequest="45" WidthRequest="100" BorderWidth="1.5" CornerRadius="50"
+                     BorderColor="ForestGreen" />
 
 
-
-                <!--<ImageButton  Source="groceries.png" Clicked="ImageButton_Clicked"></ImageButton>-->
-            </Grid>
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
