@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj": {}
+    "D:\\Github\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj": {
+    "D:\\Github\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj",
+        "projectUniqueName": "D:\\Github\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj",
         "projectName": "BudgetTracking.Android",
-        "projectPath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj",
-        "packagesPath": "C:\\Users\\srava\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking.Android\\obj\\",
+        "projectPath": "D:\\Github\\BudgetTracking\\BudgetTracking.Android\\BudgetTracking.Android.csproj",
+        "packagesPath": "C:\\Users\\sumam\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\BudgetTracking\\BudgetTracking.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\srava\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sumam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid12.0": {
             "projectReferences": {
-              "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj": {
-                "projectPath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj"
+              "D:\\Github\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj": {
+                "projectPath": "D:\\Github\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj"
               }
             }
           }
@@ -54,20 +54,20 @@
         }
       }
     },
-    "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj": {
+    "D:\\Github\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj",
+        "projectUniqueName": "D:\\Github\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj",
         "projectName": "BudgetTracking",
-        "projectPath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj",
-        "packagesPath": "C:\\Users\\srava\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking\\obj\\",
+        "projectPath": "D:\\Github\\BudgetTracking\\BudgetTracking\\BudgetTracking.csproj",
+        "packagesPath": "C:\\Users\\sumam\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\BudgetTracking\\BudgetTracking\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\srava\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sumam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

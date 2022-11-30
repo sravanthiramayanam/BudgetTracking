@@ -1,1 +1,1 @@
-C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking.UWP\BudgetTracking.UWP.csproj;x64
+D:\Github\BudgetTracking\BudgetTracking.UWP\BudgetTracking.UWP.csproj;x64

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "jT/orpf/Zmmu5XXPJrH22wOCmP/C8WEbcCAEVpcCT6Mxn4g75XxJQkcubIATMdq4fJekkeC1WgrZ8WbFPK5hTQ==",
+  "dgSpecHash": "eDhR2cYZSddKXYLcbkQdifKJuuSYndbCTJkoJTiUPOIcOyVSK2B1oRDl3tjO8t2runVifFmgyOuvMZeEnxz3+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\BudgetTracking\\BudgetTracking.iOS\\BudgetTracking.iOS.csproj",
+  "projectFilePath": "D:\\Github\\BudgetTracking\\BudgetTracking.iOS\\BudgetTracking.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\srava\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\srava\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\srava\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\sumam\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\sumam\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\sumam\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
   "logs": []
 }
