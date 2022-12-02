@@ -24,23 +24,18 @@
                     <x:String>December</x:String>
                 </Picker.Items>
             </Picker>
-            <Editor  x:Name="MonthlyBudget" Placeholder="Enter monthly goal" PlaceholderColor="Red"/>
+            <Entry x:Name="MonthlyBudget" Placeholder="Enter monthly goal" PlaceholderColor="Red"/>
             <Button  VerticalOptions="Center" x:Name="SaveMonthlyBudget" Text="SaveMonthlyBudget"  Clicked="SaveMonthlyBudgetClicked" BorderWidth="1.5" CornerRadius="50"
-                     BorderColor="ForestGreen"
-                      />
-            <!--<Label  x:Name="BudgetLabel" Text="Your Monthly Budget is:" FontSize="Large" FontFamily="Bold" TextColor="ForestGreen"/>-->
-           <!-- <Editor  x:Name="yourbudget" />-->
+                     BorderColor="ForestGreen" />
             <Label Text="Remaining Budget for your month is:" FontSize="Large" FontFamily="Bold" TextColor="Red"/>
-            <Editor x:Name="Leftbudget" Placeholder="Setup monthly budget" PlaceholderColor="Red"/>
+            <Entry x:Name="Leftbudget" Placeholder="Setup monthly budget" PlaceholderColor="Red"/>
             <ListView x:Name="BudgetListView" 
                       Margin="20"
                       ItemSelected="BudgetListView_ItemSelected">
                 <ListView.ItemTemplate>
                     
                     <DataTemplate x:DataType="model:Budget">
-                        <!--<TextCell Text="{Binding Text}"  Detail="{Binding amount} ">
-                           
-                        </TextCell>-->
+                        
                         <ImageCell  Text="{Binding Text}" Detail="{Binding amount}" ImageSource="{Binding ImageUrl}"/>
 
                     </DataTemplate>

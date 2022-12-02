@@ -19,9 +19,7 @@ namespace BudgetTracking.Views
         public CategoriesList()
         {
             InitializeComponent();
-            //var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-              // "budget.txt");
-            //yourbudget.Text = File.ReadAllText(fileName);
+    
 
             ListOfCategory = new List<Category>();
             ListOfCategory.Add(new Category
@@ -63,7 +61,7 @@ namespace BudgetTracking.Views
                 Name.Text = text[0];
                 amount.Text = text[1];
                 budgetdate.Date= DateTime.Parse(text[2]);
-                //date.Text = text[2];
+        
                 selectedcategory.Text = text[3];           
 
             }
@@ -72,7 +70,7 @@ namespace BudgetTracking.Views
                 Name.Text = string.Empty;
                 amount.Text = string.Empty;
                 budgetdate.Date = DateTime.Today;
-                // date.Text = string.Empty;
+            
                 selectedcategory.Text = string.Empty;
             }
 
@@ -80,7 +78,7 @@ namespace BudgetTracking.Views
         
         private async void SaveButtonClicked(object sender, EventArgs e)
         {
-            //var SelectedMonth = int.Parse(date.Text.Split('/')[0]) - 1;
+    
             var SelectedMonth = int.Parse(budgetdate.Date.ToString().Split('/')[0]) - 1;
             var budget = (Budget)BindingContext;
             if (budget == null || string.IsNullOrEmpty(budget.FileName))
@@ -90,11 +88,18 @@ namespace BudgetTracking.Views
                     $"{Path.GetRandomFileName()}.{SelectedMonth}.notes.txt");
 
             }
+            else if (!budget.FileName.Contains($"{SelectedMonth}.notes.txt"))
+            {
+                File.Delete(budget.FileName);
+                budget = new Budget();
+                budget.FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    $"{Path.GetRandomFileName()}.{SelectedMonth}.notes.txt");
+            }
             File.WriteAllText(budget.FileName,Name.Text);
             if(string.IsNullOrWhiteSpace(amount.Text) || currentCategory==null)
             {
                 await DisplayAlert("Alert", "Please enter/select a valid amount, date and category", "OK"); 
-                //File.AppendAllText(budget.FileName, "\n" + 0.0);
+                
             }
             else
             {
@@ -131,15 +136,11 @@ namespace BudgetTracking.Views
             Name.Text= string.Empty;
             amount.Text= string.Empty;
             budgetdate.Date = DateTime.Today;
-            //date.Text= string.Empty;
+          
             Navigation.PopModalAsync();
         }
 
-        //private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
-        //{
-        //    date.Text = e.NewDate.ToString();
-         
-        //}
+     
 
         private void CategoryListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -149,7 +150,7 @@ namespace BudgetTracking.Views
 
         private void budgetdate_DateSelected(object sender, DateChangedEventArgs e)
         {
-           // e.NewDate.ToString();
+          
         }
     }
 }

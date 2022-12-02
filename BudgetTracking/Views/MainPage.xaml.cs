@@ -21,8 +21,7 @@ namespace BudgetTracking.Views
         public MainPage()
         {
             InitializeComponent();
-            //double totalexpenses = 0;
-            //double remainingbudget = totalbudget - totalexpenses;
+           
            
             var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 $"{SelectedMonth}.budget.txt");
@@ -31,9 +30,9 @@ namespace BudgetTracking.Views
             {
                MonthlyBudget.IsVisible = true;
                SaveMonthlyBudget.IsVisible = true;
-              // BudgetLabel.IsVisible = false;
+             
                 totalbudget = double.Parse(File.ReadAllText(fileName));
-                //yourbudget.Text = File.ReadAllText(fileName);
+            
                 MonthlyBudget.Text = File.ReadAllText(fileName);
                 MonthPicker.SelectedIndex = DateTime.Now.Month - 1;
 
@@ -42,11 +41,6 @@ namespace BudgetTracking.Views
             }
             else
             {
-                
-                //MonthlyBudget.IsVisible = true;
-                //SaveMonthlyBudget.IsVisible = true;
-                //BudgetLabel.IsVisible = false;
-                //yourbudget.IsVisible = false;
 
                 MonthPicker.SelectedIndex = DateTime.Now.Month - 1;
 
@@ -73,13 +67,8 @@ namespace BudgetTracking.Views
             {
                 MonthlyBudget.IsVisible = true;
                 SaveMonthlyBudget.IsVisible = true;
-                // BudgetLabel.IsVisible = false;
                 totalbudget = double.Parse(File.ReadAllText(fileName).Trim());
-                //yourbudget.Text = File.ReadAllText(fileName);
                 MonthlyBudget.Text = File.ReadAllText(fileName);
-                //MonthPicker.SelectedIndex = DateTime.Now.Month - 1;
-
-
                 var budgets = new List<Budget>();
                 var files = Directory.EnumerateFiles(Environment.GetFolderPath(
                     Environment.SpecialFolder.LocalApplicationData), $"*.{SelectedMonth}.notes.txt");
@@ -231,21 +220,17 @@ namespace BudgetTracking.Views
                     sw.WriteLine(BudgetForMonth);
                     sw.Close();
                 }
-
-            //MonthlyBudget.IsVisible = false;
-            //SaveMonthlyBudget.IsVisible = false;
-            //yourbudget.Text = BudgetForMonth;
             MonthlyBudget.IsVisible = true;
             SaveMonthlyBudget.IsVisible = true;
             
             if (Navigation.ModalStack.Count > 0)
-                {
+            {
                     await Navigation.PopModalAsync();
-                }
-                else
-                {
-                    Shell.Current.CurrentItem = (Shell.Current as AppShell).MainPageContent;
-                }
+            }
+            else
+            {
+                Shell.Current.CurrentItem = (Shell.Current as AppShell).ExpensePageContent;
+            }
 
             LoadUI();
 

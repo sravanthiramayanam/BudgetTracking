@@ -52,10 +52,7 @@
             <DatePicker x:Name="budgetdate" 
                                            
                     Grid.Row="2" Grid.Column="1" DateSelected="budgetdate_DateSelected"/>
-            <!--<Entry x:Name="date" 
-                    Placeholder="Selected date" PlaceholderColor="Gray"
-                    VerticalOptions="Center"/>-->
-
+          
             <Button  Text="Save"  Clicked="SaveButtonClicked" BorderWidth="1.5" CornerRadius="50"
                      BorderColor="ForestGreen" />
             <Button  Text="Delete" Clicked="DeleteButtonClicked" HeightRequest="45" WidthRequest="100" BorderWidth="1.5" CornerRadius="50"
