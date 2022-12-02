@@ -10,7 +10,7 @@ namespace BudgetTracking.Models
     
         public string amount { get; set; }
  
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         public string Category { get; set; }
         public string FileName { get; set; }
         public string ImageUrl { get; set; }

@@ -19,9 +19,9 @@ namespace BudgetTracking.Views
         public CategoriesList()
         {
             InitializeComponent();
-            var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-               "budget.txt");
-            yourbudget.Text = File.ReadAllText(fileName);
+            //var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+              // "budget.txt");
+            //yourbudget.Text = File.ReadAllText(fileName);
 
             ListOfCategory = new List<Category>();
             ListOfCategory.Add(new Category
@@ -62,43 +62,63 @@ namespace BudgetTracking.Views
                 String[] text = allText.Split('\n');
                 Name.Text = text[0];
                 amount.Text = text[1];
-                date.Text = text[2];
+                budgetdate.Date= DateTime.Parse(text[2]);
+                //date.Text = text[2];
                 selectedcategory.Text = text[3];           
 
+            }
+            else
+            {
+                Name.Text = string.Empty;
+                amount.Text = string.Empty;
+                budgetdate.Date = DateTime.Today;
+                // date.Text = string.Empty;
+                selectedcategory.Text = string.Empty;
             }
 
         }
         
         private async void SaveButtonClicked(object sender, EventArgs e)
         {
-            var budget= (Budget)BindingContext;
+            //var SelectedMonth = int.Parse(date.Text.Split('/')[0]) - 1;
+            var SelectedMonth = int.Parse(budgetdate.Date.ToString().Split('/')[0]) - 1;
+            var budget = (Budget)BindingContext;
             if (budget == null || string.IsNullOrEmpty(budget.FileName))
             {
                 budget = new Budget();
                 budget.FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                    $"{Path.GetRandomFileName()}.notes.txt");
+                    $"{Path.GetRandomFileName()}.{SelectedMonth}.notes.txt");
+
             }
             File.WriteAllText(budget.FileName,Name.Text);
-            if(amount.Text=="")
+            if(string.IsNullOrWhiteSpace(amount.Text) || currentCategory==null)
             {
-                File.AppendAllText(budget.FileName, "\n" + 0.0);
+                await DisplayAlert("Alert", "Please enter/select a valid amount, date and category", "OK"); 
+                //File.AppendAllText(budget.FileName, "\n" + 0.0);
             }
             else
             {
                 File.AppendAllText(budget.FileName, "\n" + amount.Text);
+                File.AppendAllText(budget.FileName, "\n" + budgetdate.Date.ToString());
+                File.AppendAllText(budget.FileName, "\n" + selectedcategory.Text);
+                File.AppendAllText(budget.FileName, "\n" + currentCategory.ImageUrl);
+                if (Navigation.ModalStack.Count > 0)
+                {
+                    amount.Text = string.Empty;
+                    selectedcategory.Text = null;
+                    budgetdate.Date = DateTime.Today;
+                    await Navigation.PopModalAsync();
+                }
+                else
+                {
+                    amount.Text = string.Empty;
+                    selectedcategory.Text = null;
+                    budgetdate.Date = DateTime.Today;
+                    Shell.Current.CurrentItem = (Shell.Current as AppShell).MainPageContent;
+                }
             }
             
-            File.AppendAllText(budget.FileName,"\n"+date.Text);
-            File.AppendAllText(budget.FileName,"\n"+selectedcategory.Text);
-            File.AppendAllText(budget.FileName, "\n" + currentCategory.ImageUrl);
-            if (Navigation.ModalStack.Count > 0)
-            {
-                await Navigation.PopModalAsync();
-            }
-            else
-            {
-                Shell.Current.CurrentItem = (Shell.Current as AppShell).MainPageContent;
-            }
+            
         }
 
         private void DeleteButtonClicked(object sender, EventArgs e)
@@ -110,20 +130,26 @@ namespace BudgetTracking.Views
             }
             Name.Text= string.Empty;
             amount.Text= string.Empty;
-            date.Text= string.Empty;
+            budgetdate.Date = DateTime.Today;
+            //date.Text= string.Empty;
             Navigation.PopModalAsync();
         }
 
-        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
-        {
-            date.Text = e.NewDate.ToString();
+        //private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        //{
+        //    date.Text = e.NewDate.ToString();
          
-        }
+        //}
 
         private void CategoryListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             currentCategory = e.SelectedItem as Category;
             selectedcategory.Text= currentCategory.Name;    
+        }
+
+        private void budgetdate_DateSelected(object sender, DateChangedEventArgs e)
+        {
+           // e.NewDate.ToString();
         }
     }
 }

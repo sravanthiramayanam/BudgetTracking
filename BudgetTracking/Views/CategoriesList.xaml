@@ -5,10 +5,7 @@
              x:Class="BudgetTracking.Views.CategoriesList">
     <ContentPage.Content>
         <StackLayout>
-            <Label  x:Name="BudgetLabel" Text="Your Monthly Budget is:" FontSize="Large" FontFamily="Bold" TextColor="ForestGreen"/>
-            <Editor x:Name="yourbudget"/>
-            
-
+         
             <Label Text="Name of Item" TextColor="ForestGreen" FontSize="Medium"  FontFamily="Bold"/>
             <Entry  x:Name="Name" 
                     Placeholder="Enter name of item" PlaceholderColor="Gray" 
@@ -52,10 +49,12 @@
                     Placeholder="Enter amount u spent" PlaceholderColor="Gray"
                     VerticalOptions="Center"  />
             <Label Text="Select date and time of purchase" TextColor="ForestGreen" FontSize="Medium"  FontFamily="Bold"/>
-            <DatePicker Grid.Row="2" Grid.Column="1" DateSelected="DatePicker_DateSelected"/>
-            <Entry x:Name="date" 
+            <DatePicker x:Name="budgetdate" 
+                                           
+                    Grid.Row="2" Grid.Column="1" DateSelected="budgetdate_DateSelected"/>
+            <!--<Entry x:Name="date" 
                     Placeholder="Selected date" PlaceholderColor="Gray"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"/>-->
 
             <Button  Text="Save"  Clicked="SaveButtonClicked" BorderWidth="1.5" CornerRadius="50"
                      BorderColor="ForestGreen" />

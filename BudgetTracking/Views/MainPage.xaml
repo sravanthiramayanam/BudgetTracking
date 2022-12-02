@@ -7,14 +7,31 @@
         <StackLayout>
             <Label Text="Welcome to budget app"  TextColor="ForestGreen" HorizontalOptions="CenterAndExpand" FontSize="Large" FontFamily="Bold" />
             <Image Source="budget.png" WidthRequest="180" HeightRequest="180"/>
+            <Picker x:Name="MonthPicker" Title ="" WidthRequest="400"  
+                        Margin="20,0,0,0" HorizontalOptions="Start" SelectedIndexChanged="MonthPicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>January</x:String>
+                    <x:String>Feburary</x:String>
+                    <x:String>March</x:String>
+                    <x:String>April</x:String>
+                    <x:String>May</x:String>
+                    <x:String>June</x:String>
+                    <x:String>July</x:String>
+                    <x:String>August</x:String>
+                    <x:String>September</x:String>
+                    <x:String>October</x:String>
+                    <x:String>November</x:String>
+                    <x:String>December</x:String>
+                </Picker.Items>
+            </Picker>
             <Editor  x:Name="MonthlyBudget" Placeholder="Enter monthly goal" PlaceholderColor="Red"/>
             <Button  VerticalOptions="Center" x:Name="SaveMonthlyBudget" Text="SaveMonthlyBudget"  Clicked="SaveMonthlyBudgetClicked" BorderWidth="1.5" CornerRadius="50"
                      BorderColor="ForestGreen"
                       />
-            <Label  x:Name="BudgetLabel" Text="Your Monthly Budget is:" FontSize="Large" FontFamily="Bold" TextColor="ForestGreen"/>
-            <Editor  x:Name="yourbudget" />
+            <!--<Label  x:Name="BudgetLabel" Text="Your Monthly Budget is:" FontSize="Large" FontFamily="Bold" TextColor="ForestGreen"/>-->
+           <!-- <Editor  x:Name="yourbudget" />-->
             <Label Text="Remaining Budget for your month is:" FontSize="Large" FontFamily="Bold" TextColor="Red"/>
-            <Editor x:Name="Leftbudget"/>
+            <Editor x:Name="Leftbudget" Placeholder="Setup monthly budget" PlaceholderColor="Red"/>
             <ListView x:Name="BudgetListView" 
                       Margin="20"
                       ItemSelected="BudgetListView_ItemSelected">

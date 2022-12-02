@@ -1,3 +1,6 @@
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\bin\Debug\netstandard2.0\BudgetTracking.deps.json
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\bin\Debug\netstandard2.0\BudgetTracking.dll
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\bin\Debug\netstandard2.0\BudgetTracking.pdb
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\BudgetTracking.csproj.AssemblyReference.cache
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\BudgetTracking.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\App.xaml.g.cs
@@ -7,11 +10,8 @@ C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\n
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\BudgetTracking.AssemblyInfoInputs.cache
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\BudgetTracking.AssemblyInfo.cs
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\BudgetTracking.csproj.CoreCompileInputs.cache
+C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\BudgetTracking.dll
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\refint\BudgetTracking.dll
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\BudgetTracking.pdb
-C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\bin\Debug\netstandard2.0\BudgetTracking.deps.json
-C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\bin\Debug\netstandard2.0\BudgetTracking.dll
-C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\bin\Debug\netstandard2.0\BudgetTracking.pdb
-C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\srava\source\repos\Kalclasses\BudgetTracking\BudgetTracking\obj\Debug\netstandard2.0\ref\BudgetTracking.dll
